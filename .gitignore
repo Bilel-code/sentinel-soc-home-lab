@@ -1,0 +1,7 @@
+# Private working notes - contains credentials, never commit
+context.md
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+*.tmp

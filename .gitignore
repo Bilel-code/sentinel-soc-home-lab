@@ -1,7 +1,21 @@
-# Private working notes - contains credentials, never commit
-context.md
-
 # OS/editor cruft
 .DS_Store
 Thumbs.db
+desktop.ini
 *.tmp
+
+# Credentials & secrets - never commit these
+*.pem
+*.key
+*.pfx
+*.cer
+*.p12
+id_rsa*
+.env
+.env.*
+*credentials*.json
+*secrets*.json
+azureauth.json
+*.rdp
+
+# Working notes live outside this repo folder entirely now (see ../context.md)

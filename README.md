@@ -1,6 +1,6 @@
 # Microsoft Sentinel SOC Home Lab
 
-A hands-on home lab built to close gain skills on the  Microsoft-tooling (Entra ID, Microsoft Sentinel, KQL).
+A hands-on home lab built to gain skills on the  Microsoft-tooling (Entra ID, Microsoft Sentinel, KQL).
 
 ## About me
 

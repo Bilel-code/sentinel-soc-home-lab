@@ -1,6 +1,6 @@
 # Microsoft Sentinel SOC Home Lab
 
-A hands-on home lab built to close the Microsoft-tooling gap between my SOC analyst internship experience (Wazuh, MITRE ATT&CK correlation rules, Caldera, Atomic Red Team) and the Microsoft-stack skills (Entra ID, Microsoft Sentinel, KQL) that UK SOC/cyber security job postings keep asking for.
+A hands-on home lab built to close gain skills on the  Microsoft-tooling (Entra ID, Microsoft Sentinel, KQL).
 
 ## About me
 

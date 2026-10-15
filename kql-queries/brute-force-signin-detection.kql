@@ -1,13 +1,17 @@
-// Brute-force sign-in detection — MITRE ATT&CK T1110
+// Brute-force sign-in detection - MITRE ATT&CK T1110
 // Detects 4+ failed sign-ins followed by a success, same source IP and
 // account, clustered within a 5-minute window. Runs against synthetic
 // telemetry in SyntheticSignins_CL for this home-lab exercise.
 //
 // Used as the scheduled query behind the "Synthetic Brute Force Sign-In
 // Detection" Sentinel analytics rule (MITRE: Credential Access / T1110).
+//
+// Schedule: every 1 hour, lookback 1 hour, so each event is evaluated by
+// exactly one run. The last line returns the event time as TimeGenerated so
+// the alert reflects when the activity happened.
 
 SyntheticSignins_CL
-| where TimeGenerated > ago(14d)
+| where TimeGenerated > ago(1h)
 | summarize
     FailedAttempts = countif(ResultType == "Failure"),
     SuccessAttempts = countif(ResultType == "Success"),
@@ -17,3 +21,4 @@ SyntheticSignins_CL
     by SourceIP, UserPrincipalName
 | extend TimeSpan = LastEvent - FirstFailure
 | where TimeSpan < 5m and FailedAttempts >= 4 and SuccessAttempts >= 1
+| extend TimeGenerated = LastEvent
